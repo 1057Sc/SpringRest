@@ -1,12 +1,10 @@
 .classpath
+!/.project
 .project
-.settings/
+.settings
 target/
-bin/
+.idea/
+.DS_Store
 .idea
+overlays/
 *.iml
-portal/src/main/resources/properties/config.properties
-portal/src/main/resources/properties/jdbc.properties
-portal/src/main/resources/profile/dev/properties/config.properties
-portal/src/main/resources/profile/dev/properties/jdbc.properties
-
