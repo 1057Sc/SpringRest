@@ -21,7 +21,7 @@ public class StringSwitchDemoDeCompile {
                     if(var2.equals("september")) {
                         var3 = 8;
                     }
-                    break;
+                     break;
                 case -1826660246:
                     if(var2.equals("january")) {
                         var3 = 0;
