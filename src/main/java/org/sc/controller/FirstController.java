@@ -13,7 +13,6 @@ public class FirstController {
 
     @RequestMapping("demo")
     public void demo(){
-
         System.out.println("demo");
     }
 
