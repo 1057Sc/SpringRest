@@ -22,13 +22,14 @@ public class AuthCodeController {
 
 
     @RequestMapping(value = "/image")
-    public void getAuthCode(@RequestParam String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void getAuthCode(@RequestParam(required = false) String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
         // TODO Auto-generated method stub
         // response.setContentType("text/html");
         response.setContentType("image/png");
         response.setCharacterEncoding("utf-8");
         String authCode = AuthCodeUtil.getAuthCode();
         request.getSession().setAttribute("authcode", authCode.toLowerCase());
+        request.getSession().setMaxInactiveInterval(10);
         //Write the image to the response
         ImageIO.write(AuthCodeUtil.getAuthImg(authCode), "png", response.getOutputStream());
     }
