@@ -15,7 +15,6 @@ import java.util.Set;
 /**
  * Created by duizhuang on 8/26/2019.
  */
-
 @Component
 @WebFilter(urlPatterns = "/*", filterName = "LangFilter")
 public class LangFilter implements Filter {
