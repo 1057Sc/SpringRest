@@ -2,6 +2,7 @@ package org.sc.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.Map;
 import java.util.Vector;

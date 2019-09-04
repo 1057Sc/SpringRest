@@ -1,5 +1,6 @@
 package org.sc.redis;
 
+import org.sc.demo.Student;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -13,7 +14,7 @@ import java.util.Set;
  */
 public class RedisDemo {
 
-    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(),"192.168.109.128");
+    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(),"localhost");
     public static void main(String args[]){
         //JedisPool pool = new JedisPool(new JedisPoolConfig(),"192.168.109.128");
         init1();
@@ -63,4 +64,9 @@ public class RedisDemo {
         pool.close();
     }
 
+    public static void demo3(){
+        Jedis jedis = null;
+        jedis = pool.getResource();
+        //jedis.hset("studeny".getBytes(),"name",);
+    }
 }
