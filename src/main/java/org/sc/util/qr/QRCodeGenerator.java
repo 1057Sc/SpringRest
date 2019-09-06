@@ -5,7 +5,6 @@ import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
-import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -15,7 +14,6 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created by Sc on 9/6/2019.
