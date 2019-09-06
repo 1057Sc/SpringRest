@@ -14,35 +14,42 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import static java.lang.Thread.sleep;
+
 /**
- * Created by duizhuang on 9/4/2019.
+ * Created by Sc on 9/4/2019.
  */
 
 @RestController
 public class PendRequest {
 
 
-    private static List<ChangeRequestWrapper> requestList  = new LinkedList<>();
+    private static List<HttpServletRequest> requestList  = new LinkedList<>();
 
     private boolean flag = false;
 
     @RequestMapping(value = "/pend")
     @ResponseBody
-    public Map pendRequest(String reqId, ChangeRequestWrapper request, HttpServletResponse response) throws IOException {
+    public Map pendRequest(String reqId, HttpServletRequest request, HttpServletResponse response) throws IOException, InterruptedException {
 
         requestList.add(request);
+    /*    Thread.sleep(25000);
 
-        while (true){
+        if (reqId.equals("1")) {
+            Thread.interrupted();
+        }*/
+        /*while (true){
             System.out.println(1);
+            sleep(25000);
             if (flag){
                 break;
             }
-        }
+        }*/
 
         Map map = new HashMap();
         map.put("size",requestList.size());
 
-        response.getOutputStream().print("dsadsadasd");
+        //response.getOutputStream().print("dsadsadasd");
 
         return map;
     }

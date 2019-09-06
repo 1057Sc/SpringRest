@@ -1,11 +1,11 @@
-package org.sc.util;
+package org.sc.util.verify;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * Created by duizhuang on 8/28/2019.
+ * Created by Sc on 8/28/2019.
  */
 public class AuthCodeUtil {
     public static final int AUTHCODE_LENGTH = 5; // length of verification code

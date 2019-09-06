@@ -1,6 +1,6 @@
 package org.sc.controller;
 
-import org.sc.util.AuthCodeUtil;
+import org.sc.util.verify.AuthCodeUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by duizhuang on 8/28/2019.
+ * Created by Sc on 8/28/2019.
  */
 @Controller
 @RequestMapping(value = "/authorization_login")

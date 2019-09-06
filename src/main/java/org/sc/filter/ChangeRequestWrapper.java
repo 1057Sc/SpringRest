@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Vector;
 
 /**
- * Created by duizhuang on 8/26/2019.
+ * Created by Sc on 8/26/2019.
  */
 public class ChangeRequestWrapper extends HttpServletRequestWrapper {
     private Map<String, String[]> parameterMap; // 所有参数的Map集合

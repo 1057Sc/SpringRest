@@ -4,7 +4,7 @@ import javax.servlet.*;
 import java.io.IOException;
 
 /**
- * Created by duizhuang on 9/4/2019.
+ * Created by Sc on 9/4/2019.
  */
 public class PendServlet implements Servlet{
 

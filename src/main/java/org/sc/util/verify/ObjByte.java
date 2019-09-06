@@ -1,4 +1,4 @@
-package org.sc.util;
+package org.sc.util.verify;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

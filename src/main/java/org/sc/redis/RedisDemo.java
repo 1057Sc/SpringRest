@@ -22,7 +22,7 @@ public class RedisDemo {
 
     public static void init(){
         // try-with-resource
-        JedisPool pool = new JedisPool(new JedisPoolConfig(),"192.168.109.128");
+        JedisPool pool = new JedisPool(new JedisPoolConfig(),"10.0.100.235");
         /// Jedis implements Closeable. Hence, the jedis instance will be auto-closed after the last statement.
         try(Jedis jedis = pool.getResource()){
             /// ... do stuff here ... for example
