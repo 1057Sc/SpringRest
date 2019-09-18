@@ -17,7 +17,9 @@ import org.springframework.security.web.access.intercept.FilterInvocationSecurit
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Configuration
 @EnableAutoConfiguration
@@ -48,6 +50,18 @@ public class SecurityWithoutCsrfConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .addFilterAfter(dynamicallyUrlInterceptor(), FilterSecurityInterceptor.class)
         ;
+
+
+    }
+
+    protected void configure1(HttpSecurity http) throws Exception {
+     /*   http
+                // ...
+                .headers(headers ->
+                        headers
+                                .defaultsDisabled()
+                                .contentTypeOptions(withDefaults())
+                );*/
     }
 
     @Override

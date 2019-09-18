@@ -25,6 +25,7 @@ public class AuthCodeController {
     public void getAuthCode(@RequestParam(required = false) String name, HttpServletRequest request, HttpServletResponse response) throws IOException {
         // TODO Auto-generated method stub
         // response.setContentType("text/html");
+        System.out.println(request.getSession().getId());
         response.setContentType("image/png");
         response.setCharacterEncoding("utf-8");
         String authCode = AuthCodeUtil.getAuthCode();
@@ -44,5 +45,13 @@ public class AuthCodeController {
         Map map = new HashMap();
         map.put("name",name);
         return map;
+    }
+
+
+    @RequestMapping(value = "/jid")
+    @ResponseBody
+    public String sessionId(HttpServletRequest request){
+        System.out.println(request.getSession().getId());
+        return request.getSession().getId();
     }
 }
