@@ -58,8 +58,7 @@ public class MyFilterSecurityMetadataSource implements FilterInvocationSecurityM
         //List<ConfigAttribute> attributes = new ArrayList<ConfigAttribute>();
 
         //遍历我们初始化的权限数据，找到对应的url对应的权限
-        for (Map.Entry<RequestMatcher, Collection<ConfigAttribute>> entry : requestMap
-                .entrySet()) {
+        for (Map.Entry<RequestMatcher, Collection<ConfigAttribute>> entry : requestMap.entrySet()) {
             if (entry.getKey().matches(request)) {
                 return entry.getValue();
             }

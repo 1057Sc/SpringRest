@@ -1,4 +1,3 @@
-/*
 package org.sc.security;
 
 import org.springframework.security.access.ConfigAttribute;
@@ -47,4 +46,3 @@ public class MyFilterInvocationSecurityMetadataSource implements FilterInvocatio
         return FilterInvocation.class.isAssignableFrom(clazz);
     }
 }
-*/
