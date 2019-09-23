@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.Thread.sleep;
 
@@ -65,6 +62,19 @@ public class PendRequest {
     public String changefalse(){
         flag = false;
 
+        return "1111";
+    }
+
+    @RequestMapping(value = "/wait_test")
+    public String waitTest(Integer time) throws InterruptedException {
+        PendRequest pendRequest = new PendRequest();
+        synchronized (pendRequest) {
+              if (Objects.equals(time,10)) {
+                  pendRequest.wait(10 * 1000);
+              }
+            System.out.println(11111);
+              notify();
+          }
         return "1111";
     }
 }
