@@ -1,5 +1,6 @@
 package org.sc.filter;
 
+
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
@@ -8,8 +9,12 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.annotation.WebInitParam;
 import java.io.IOException;
 
+
+@WebFilter(initParams = {@WebInitParam(name = "name", value = "value"),@WebInitParam(name = "name", value = "value")} )
 public class DynamicallyUrlInterceptor extends AbstractSecurityInterceptor implements Filter {
 
     //标记自定义的url拦截器已经加载
