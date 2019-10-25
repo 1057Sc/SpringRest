@@ -30,18 +30,16 @@ public class PendRequest {
     public Map pendRequest(String reqId, HttpServletRequest request, HttpServletResponse response) throws IOException, InterruptedException {
 
         requestList.add(request);
-    /*    Thread.sleep(25000);
 
         if (reqId.equals("1")) {
             Thread.interrupted();
-        }*/
-        /*while (true){
+        }
+        while (true){
             System.out.println(1);
-            sleep(25000);
             if (flag){
                 break;
             }
-        }*/
+        }
 
         Map map = new HashMap();
         map.put("size",requestList.size());
