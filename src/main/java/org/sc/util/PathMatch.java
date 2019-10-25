@@ -20,10 +20,19 @@ public class PathMatch {
     @Test
     public void pathMatch() {
         AntPathMatcher antPathMatcher = new AntPathMatcher();
-        boolean match = antPathMatcher.match("/users/*/address", "/users/12213/address");
-        System.out.println(match);
 
-        boolean match1 = antPathMatcher.match("/users/*/address", "/users/12213/123123/address");
-        System.out.println(match1);
+        // boolean match = antPathMatcher.match("/users/*/address", "/users/12213/address");
+        // System.out.println(match);
+
+        // boolean match1 = antPathMatcher.match("/users/*/address", "/users/12213/123123/address");
+        // System.out.println(match1);
+
+
+        boolean match3 = antPathMatcher.match("/v1/seller_staff_roles/1/permissions", "/v*/seller_staff_roles/*/permissions");
+        boolean match4 = antPathMatcher.match("/v*/seller_staff_roles/*/permissions", "/v1/seller_staff_roles/1/permissions");
+        System.out.println(match4);
+
+        boolean match = antPathMatcher.match("/v*/login/**", "/v1/login/qr_code/actions/check");
+        System.out.println(match);
     }
 }
