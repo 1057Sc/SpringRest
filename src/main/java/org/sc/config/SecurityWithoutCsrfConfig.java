@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 @Configuration
 @EnableAutoConfiguration
 @EnableWebSecurity
@@ -44,6 +45,26 @@ public class SecurityWithoutCsrfConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(final HttpSecurity http) throws Exception {
         http
+              /*  .authorizeRequests()
+                .antMatchers("/**").permitAll()
+                .and()
+                .antMatcher("OPTIONS")*/
+                .headers()
+                .contentTypeOptions()
+                .and()
+                .xssProtection()
+                .and()
+                .cacheControl()
+                .and()
+                .httpStrictTransportSecurity()
+                .and()
+                .frameOptions();
+    }
+
+/*
+    @Override
+    protected void configure(final HttpSecurity http) throws Exception {
+        http
                 .authorizeRequests()
                 .antMatchers("/auth/admin/*").hasAuthority("ADMIN")
                 .antMatchers("/auth/*").hasAnyAuthority("ADMIN", "USER")
@@ -53,8 +74,10 @@ public class SecurityWithoutCsrfConfig extends WebSecurityConfigurerAdapter {
 
 
     }
+*/
 
     protected void configure1(HttpSecurity http) throws Exception {
+
      /*   http
                 // ...
                 .headers(headers ->
