@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+
+/**
+ *
+ *  只需要对特定的操作做csrf防御，例如特别敏感的操作。
+ *  丢到Spring security 即可使用
+ */
 public class CsrfSecurityRequestMatcher implements RequestMatcher {
 
     private Pattern allowedMethods = Pattern.compile("^(GET|HEAD|TRACE|OPTIONS)$");
