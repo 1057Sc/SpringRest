@@ -1,5 +1,6 @@
 package org.sc.redis;
 
+import org.junit.Test;
 import org.sc.demo.Student;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
@@ -85,6 +86,20 @@ public class RedisDemo {
             }*/
             pipelined.sync();
         } finally {
+            jedis.close();
+        }
+    }
+
+    @Test
+    public void demo5(){
+        Jedis jedis = null;
+        try {
+            jedis = pool.getResource();
+            Pipeline pipelined = jedis.pipelined();
+            // the same with Jedis api
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
             jedis.close();
         }
     }
