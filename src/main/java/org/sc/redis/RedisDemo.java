@@ -4,6 +4,7 @@ import org.sc.demo.Student;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
+import redis.clients.jedis.Pipeline;
 
 import java.util.Set;
 
@@ -68,5 +69,23 @@ public class RedisDemo {
         Jedis jedis = null;
         jedis = pool.getResource();
         //jedis.hset("studeny".getBytes(),"name",);
+    }
+
+    public static void demo4(String fileLengthKey, String fileDataKey, String field, long blockSize){
+        Jedis jedis = null;
+        try{
+            jedis = pool.getResource();
+            Pipeline pipelined = jedis.pipelined();
+            //delete file length
+            pipelined.hdel(fileLengthKey.getBytes(), field.getBytes());
+            //delete file content
+            /*for (int i = 0; i < blockSize; i++) {
+                byte[] blockName = getBlockName(field, i);
+                pipelined.hdel(fileDataKey.getBytes(), blockName);
+            }*/
+            pipelined.sync();
+        } finally {
+            jedis.close();
+        }
     }
 }
