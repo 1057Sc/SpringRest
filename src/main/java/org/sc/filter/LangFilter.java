@@ -2,7 +2,6 @@ package org.sc.filter;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.slf4j.Logger;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
