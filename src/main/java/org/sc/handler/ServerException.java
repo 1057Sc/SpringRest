@@ -1,5 +1,5 @@
 package org.sc.handler;
 
 
-public class ServerExecpetion extends Exception {
+public class ServerException extends Exception {
 }
