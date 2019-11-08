@@ -10,7 +10,7 @@ import java.util.Map;
 public class ServerExceptionHandler {
 
     @ExceptionHandler(value = ServerException.class)
-    public Map exeption(ServerException exception){
+    public Map exception(ServerException exception){
         exception.printStackTrace();
         return new HashMap();
     }
